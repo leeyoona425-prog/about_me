@@ -1,0 +1,509 @@
+ *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+    :root {
+      --bg-main:    #f5f4f0;
+      --bg-white:   #ffffff;
+      --bg-surface: #f0efe9;
+      --bg-success: #eaf3de;
+      --bg-info:    #e6f1fb;
+      --text-primary:   #1a1a19;
+      --text-secondary: #5f5e5a;
+      --text-tertiary:  #9e9d97;
+      --text-success:   #3b6d11;
+      --text-info:      #185fa5;
+      --border-faint:   rgba(0,0,0,0.08);
+      --border-soft:    rgba(0,0,0,0.14);
+      --border-medium:  rgba(0,0,0,0.22);
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+    }
+ 
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-main:    #1c1c1a;
+        --bg-white:   #252523;
+        --bg-surface: #2c2c2a;
+        --bg-success: #173404;
+        --bg-info:    #042c53;
+        --text-primary:   #f0efe9;
+        --text-secondary: #b4b2a9;
+        --text-tertiary:  #6b6a64;
+        --text-success:   #c0dd97;
+        --text-info:      #b5d4f4;
+        --border-faint:   rgba(255,255,255,0.07);
+        --border-soft:    rgba(255,255,255,0.13);
+        --border-medium:  rgba(255,255,255,0.22);
+      }
+    }
+ 
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-main);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+ 
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 2.5rem;
+      background: var(--bg-white);
+      border-bottom: 0.5px solid var(--border-faint);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+ 
+    .nav-logo { font-size: 15px; font-weight: 500; }
+ 
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+ 
+    .nav-links a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+ 
+    .nav-links a:hover { color: var(--text-primary); }
+ 
+    /* ── LAYOUT ── */
+    .wrap { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+ 
+    .section { padding: 2.75rem 0; }
+ 
+    .sec-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 1.25rem;
+    }
+ 
+    .divider { height: 0.5px; background: var(--border-faint); }
+ 
+    /* ── HERO ── */
+    .hero { padding: 3.5rem 0 2.5rem; }
+ 
+    .hero-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+ 
+    /* ── AVATAR / PROFILE PHOTO ── */
+    .avatar-block { flex-shrink: 0; }
+ 
+    .avatar-frame {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      border: 0.5px solid var(--border-soft);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+ 
+    /* 
+      RASM QO'SHISH UCHUN:
+      1. avatar-frame ichidagi .avatar-placeholder ni o'chiring
+      2. Uning o'rniga quyidagini yozing:
+         <img src="sizning-rasmingiz.jpg" alt="Ismingiz" style="width:100%;height:100%;object-fit:cover;">
+    */
+    .avatar-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-tertiary);
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+.proj-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    align-items:start;
+}
+
+
+.hidden-content{
+    max-height:0;
+    font-size: 12px;
+    overflow:hidden;
+    transition:max-height .4s ease;
+}
+
+.hidden-content.active{
+    max-height:500px;
+    margin-top:15px;
+}
+
+.hidden-content ul{
+    padding-left:18px;
+}
+
+.hidden-content li{
+    margin:8px 0;
+}
+ 
+    .avatar-placeholder i { font-size: 36px; }
+    .avatar-placeholder img { 
+       width: 120px;
+        
+     }
+ 
+    .upload-hint {
+      margin-top: 8px;
+      font-size: 15px;
+      color: var(--text-tertiary);
+      text-align: center;
+      max-width: 120px;
+    }
+  .upload-hint p{
+    font-size: 20px;
+    font-weight: bold;
+  }
+    .hero-text { flex: 1; min-width: 200px; }
+ 
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: var(--text-success);
+      background: var(--bg-success);
+      padding: 3px 11px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+ 
+    .badge i { font-size: 11px; }
+ 
+    .hero-text h1 {
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+ 
+    .hero-text h1 em {
+      font-style: normal;
+      color: var(--text-secondary);
+      font-weight: 400;
+      font-size: 17px;
+    }
+ 
+    .hero-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      max-width: 480px;
+    }
+ 
+    .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+ 
+    .btn-p {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 20px;
+      background: var(--text-primary);
+      color: var(--bg-white);
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      text-decoration: none;
+    }
+ 
+    .btn-p:hover { opacity: 0.82; }
+ 
+    .btn-s {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 20px;
+      background: transparent;
+      color: var(--text-primary);
+      border: 0.5px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+ 
+    .btn-s:hover { background: var(--bg-surface); }
+ 
+    /* ── STATS ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+    }
+ 
+    .stat-c {
+      background: var(--bg-white);
+      border: 0.5px solid var(--border-faint);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.1rem;
+    }
+ 
+    .stat-n { font-size: 26px; font-weight: 500; line-height: 1; margin-bottom: 4px; }
+    .stat-l { font-size: 12px; color: var(--text-secondary); }
+ 
+    /* ── SKILLS ── */
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+ 
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: var(--bg-white);
+      border: 0.5px solid var(--border-faint);
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+ 
+    .pill i { font-size: 14px; color: var(--text-tertiary); }
+ 
+    /* ── TIMELINE ── */
+    .timeline { display: flex; flex-direction: column; }
+ 
+    .tl-item {
+      display: flex;
+      gap: 1rem;
+      padding-bottom: 1.5rem;
+    }
+ 
+    .tl-item:last-child { padding-bottom: 0; }
+ 
+    .tl-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 28px;
+    }
+ 
+    .tl-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border-medium);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+ 
+    .tl-line {
+      flex: 1;
+      width: 0.5px;
+      background: var(--border-faint);
+      margin-top: 5px;
+    }
+    .stat-nd {
+      font-size: 17px;
+    }
+ 
+    .tl-item:last-child .tl-line { display: none; }
+ 
+    .tl-year { font-size: 11px; color: var(--text-tertiary); margin-bottom: 3px; }
+    .tl-title { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+    .tl-sub { font-size: 13px; color: var(--text-secondary); }
+ 
+    /* ── PROJECTS ── */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 10px;
+    }
+ 
+    .proj-card {
+      background: var(--bg-white);
+      border: 0.5px solid var(--border-faint);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem;
+      cursor: pointer;
+      transition: border-color 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+ 
+    .proj-card:hover { border-color: var(--border-medium); }
+ 
+    .proj-ico {
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-md);
+      background: var(--bg-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+ 
+    .proj-ico i { font-size: 17px; color: var(--text-secondary); }
+ 
+    .proj-card h3 { font-size: 14px; font-weight: 500; margin-bottom: 5px; }
+    .proj-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+ 
+    .proj-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--text-info);
+    }
+ 
+    /* ── BOOKS / LIBRARY ── */
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+    }
+ 
+    .book-card {
+      background: var(--bg-white);
+      border: 0.5px solid var(--border-faint);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+ 
+    .book-icon {
+      width: 30px;
+      height: 42px;
+      border-radius: 3px;
+      background: var(--bg-surface);
+      border: 0.5px solid var(--border-faint);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+ 
+    .book-icon i { font-size: 15px; color: var(--text-tertiary); }
+ 
+    .book-info h4 { font-size: 13px; font-weight: 500; margin-bottom: 2px; }
+    .book-info p { font-size: 11px; color: var(--text-secondary); }
+ 
+    .book-status {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--bg-success);
+      color: var(--text-success);
+    }
+ 
+    .book-status.reading {
+      background: var(--bg-info);
+      color: var(--text-info);
+    }
+ 
+    /* ── GALLERY ── */
+    /*
+      GALEREYA UCHUN:
+      Quyidagi .gal-item div larini shunday qilib o'zgartiring:
+      <div class="gal-item">
+        <img src="rasm1.jpg" alt="Tasvir nomi">
+      </div>
+      img uchun: width:100%; height:100%; object-fit:cover; border-radius:12px;
+    */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+      gap: 10px;
+    }
+ 
+    .gal-item {
+      background: var(--bg-surface);
+      border: 0.5px solid var(--border-faint);
+      border-radius: var(--radius-lg);
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 6px;
+      color: var(--text-tertiary);
+      cursor: pointer;
+      transition: border-color 0.2s;
+      overflow: hidden;
+    }
+ 
+    .gal-item:hover { border-color: var(--border-soft); }
+    .gal-item i { font-size: 24px; }
+    .gal-item span { font-size: 12px; }
+    .gal-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+ 
+    /* ── CONTACT ── */
+    .contact-c {
+      background: var(--bg-white);
+      border: 0.5px solid var(--border-faint);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+ 
+    .contact-c h2 { font-size: 17px; font-weight: 500; margin-bottom: 5px; }
+    .contact-c p { font-size: 13px; color: var(--text-secondary); }
+ 
+    .c-links { display: flex; gap: 8px; flex-wrap: wrap; }
+ 
+    .c-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border: 0.5px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      background: transparent;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+ 
+    .c-link:hover { background: var(--bg-surface); color: var(--text-primary); }
+ 
+    /* ── FOOTER ── */
+    footer {
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      border-top: 0.5px solid var(--border-faint);
+      margin-top: 1rem;
+    }
+ 
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.25rem; flex-direction: column; gap: 0.75rem; }
+      .wrap { padding: 0 1.25rem; }
+      .hero-text h1 { font-size: 24px; }
+      .nav-links { gap: 1rem; justify-content: center; }
+    }
