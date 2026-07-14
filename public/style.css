@@ -44,7 +44,7 @@
       line-height: 1.7;
     }
  
-    /* ── NAV ── */
+    
     nav {
       display: flex;
       justify-content: space-between;
@@ -57,9 +57,19 @@
       z-index: 100;
     }
  
-    .nav-logo { font-size: 15px; font-weight: 500; }
+    .nav-logo { 
+      font-size: 15px; 
+      font-weight: 500;
+    
+    }
  
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+    .nav-links { 
+      display: flex; 
+      gap: 1.5rem;
+       list-style: none; 
+       flex-wrap: wrap; 
+      
+      }
  
     .nav-links a {
       font-size: 13px;
@@ -70,7 +80,7 @@
  
     .nav-links a:hover { color: var(--text-primary); }
  
-    /* ── LAYOUT ── */
+    
     .wrap { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
  
     .section { padding: 2.75rem 0; }
@@ -86,7 +96,7 @@
  
     .divider { height: 0.5px; background: var(--border-faint); }
  
-    /* ── HERO ── */
+   
     .hero { padding: 3.5rem 0 2.5rem; }
  
     .hero-inner {
@@ -96,7 +106,7 @@
       flex-wrap: wrap;
     }
  
-    /* ── AVATAR / PROFILE PHOTO ── */
+   
     .avatar-block { flex-shrink: 0; }
  
     .avatar-frame {
@@ -111,12 +121,7 @@
       justify-content: center;
     }
  
-    /* 
-      RASM QO'SHISH UCHUN:
-      1. avatar-frame ichidagi .avatar-placeholder ni o'chiring
-      2. Uning o'rniga quyidagini yozing:
-         <img src="sizning-rasmingiz.jpg" alt="Ismingiz" style="width:100%;height:100%;object-fit:cover;">
-    */
+   
     .avatar-placeholder {
       display: flex;
       flex-direction: column;
@@ -210,7 +215,11 @@
       max-width: 480px;
     }
  
-    .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btns {
+       display: flex;
+        gap: 10px;
+         flex-wrap: wrap; 
+        }
  
     .btn-p {
       display: inline-flex;
@@ -247,7 +256,7 @@
  
     .btn-s:hover { background: var(--bg-surface); }
  
-    /* ── STATS ── */
+   
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -261,10 +270,17 @@
       padding: 1rem 1.1rem;
     }
  
-    .stat-n { font-size: 26px; font-weight: 500; line-height: 1; margin-bottom: 4px; }
-    .stat-l { font-size: 12px; color: var(--text-secondary); }
+    .stat-n {
+       font-size: 26px; 
+       font-weight: 500; 
+       line-height: 1; 
+       margin-bottom: 4px;
+       }
+    .stat-l { font-size: 12px;
+      color: var(--text-secondary); 
+    }
  
-    /* ── SKILLS ── */
+   
     .pills { display: flex; flex-wrap: wrap; gap: 8px; }
  
     .pill {
@@ -281,7 +297,7 @@
  
     .pill i { font-size: 14px; color: var(--text-tertiary); }
  
-    /* ── TIMELINE ── */
+   
     .timeline { display: flex; flex-direction: column; }
  
     .tl-item {
@@ -320,11 +336,22 @@
  
     .tl-item:last-child .tl-line { display: none; }
  
-    .tl-year { font-size: 11px; color: var(--text-tertiary); margin-bottom: 3px; }
-    .tl-title { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
-    .tl-sub { font-size: 13px; color: var(--text-secondary); }
+    .tl-year {
+       font-size: 11px;
+        color: var(--text-tertiary);
+         margin-bottom: 3px; 
+        }
+    .tl-title {
+       font-size: 14px;
+        font-weight: 500;
+         margin-bottom: 3px;
+         }
+    .tl-sub {
+       font-size: 13px;
+        color: var(--text-secondary);
+       }
  
-    /* ── PROJECTS ── */
+   
     .proj-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
@@ -356,10 +383,21 @@
       margin-bottom: 10px;
     }
  
-    .proj-ico i { font-size: 17px; color: var(--text-secondary); }
+    .proj-ico i {
+       font-size: 17px;
+       color: var(--text-secondary);
+       }
  
-    .proj-card h3 { font-size: 14px; font-weight: 500; margin-bottom: 5px; }
-    .proj-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+    .proj-card h3 { 
+      font-size: 14px;
+       font-weight: 500;
+        margin-bottom: 5px; 
+      }
+    .proj-card p { 
+      font-size: 12px;
+       color: var(--text-secondary);
+        line-height: 1.5;
+       }
  
     .proj-link {
       display: inline-flex;
@@ -370,7 +408,7 @@
       color: var(--text-info);
     }
  
-    /* ── BOOKS / LIBRARY ── */
+    
     .books-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -399,10 +437,20 @@
       flex-shrink: 0;
     }
  
-    .book-icon i { font-size: 15px; color: var(--text-tertiary); }
+    .book-icon i {
+       font-size: 15px;
+        color: var(--text-tertiary);
+       }
  
-    .book-info h4 { font-size: 13px; font-weight: 500; margin-bottom: 2px; }
-    .book-info p { font-size: 11px; color: var(--text-secondary); }
+    .book-info h4 { 
+      font-size: 13px; 
+      font-weight: 500;
+       margin-bottom: 2px;
+       }
+    .book-info p {
+       font-size: 11px;
+        color: var(--text-secondary);
+       }
  
     .book-status {
       display: inline-block;
@@ -419,15 +467,7 @@
       color: var(--text-info);
     }
  
-    /* ── GALLERY ── */
-    /*
-      GALEREYA UCHUN:
-      Quyidagi .gal-item div larini shunday qilib o'zgartiring:
-      <div class="gal-item">
-        <img src="rasm1.jpg" alt="Tasvir nomi">
-      </div>
-      img uchun: width:100%; height:100%; object-fit:cover; border-radius:12px;
-    */
+    
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
@@ -453,9 +493,14 @@
     .gal-item:hover { border-color: var(--border-soft); }
     .gal-item i { font-size: 24px; }
     .gal-item span { font-size: 12px; }
-    .gal-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .gal-item img {
+       width: 100%;
+        height: 100%;
+         object-fit: cover;
+          display: block;
+         }
  
-    /* ── CONTACT ── */
+   
     .contact-c {
       background: var(--bg-white);
       border: 0.5px solid var(--border-faint);
@@ -468,10 +513,24 @@
       gap: 1rem;
     }
  
-    .contact-c h2 { font-size: 17px; font-weight: 500; margin-bottom: 5px; }
-    .contact-c p { font-size: 13px; color: var(--text-secondary); }
+    .contact-c h2 { 
+      font-size: 17px; 
+      font-weight: 500;
+       margin-bottom: 5px; 
+      }
+
+    .contact-c p { 
+      font-size: 13px; 
+      color: var(--text-secondary); 
+    
+    }
  
-    .c-links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .c-links { 
+      
+      display: flex;
+       gap: 8px;
+        flex-wrap: wrap;
+       }
  
     .c-link {
       display: inline-flex;
@@ -490,7 +549,7 @@
  
     .c-link:hover { background: var(--bg-surface); color: var(--text-primary); }
  
-    /* ── FOOTER ── */
+    
     footer {
       padding: 1.5rem 2rem;
       text-align: center;
@@ -500,10 +559,16 @@
       margin-top: 1rem;
     }
  
-    /* ── RESPONSIVE ── */
+    
     @media (max-width: 600px) {
-      nav { padding: 1rem 1.25rem; flex-direction: column; gap: 0.75rem; }
+      nav { 
+        padding: 1rem 1.25rem;
+         flex-direction: column;
+          gap: 0.75rem; }
       .wrap { padding: 0 1.25rem; }
       .hero-text h1 { font-size: 24px; }
-      .nav-links { gap: 1rem; justify-content: center; }
+      .nav-links { 
+        gap: 1rem; 
+        justify-content: center;
+       }
     }
